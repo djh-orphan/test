@@ -28,21 +28,6 @@ public class Love {
 //        System.out.println("5+5="+5+5);
 
 
-//自加自减测试
-        int i1 = 10;
-        int i2 = 20;
-        int i = i1++;
-        System.out.println("i=" + i);
-        System.out.println("i1=" + i1);
-        i = ++i1;
-        System.out.println("i=" + i);
-        System.out.println("i1=" + i1);
-        i = i2--;
-        System.out.println("i=" + i);
-        System.out.println("i2=" + i2);
-        i = --i2;
-        System.out.println("i=" + i);
-        System.out.println("i2=" + i2);
 
 //打印数字
         int num;
@@ -65,7 +50,7 @@ public class Love {
         boolean y = false;
         short z = 42;
         //if(y == true)
-        if ((z++ == 42) & (y = true)) {
+        if ((z++ == 42) && (y = true)) {
             z++;
             System.out.println(y);
         }
