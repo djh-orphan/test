@@ -1,5 +1,7 @@
 package com.djh.test;
 
+import java.util.Arrays;
+
 public class ArrayAll {
     public static void main(String[] args) {
         int a[][] = new int[2][];
@@ -14,6 +16,12 @@ public class ArrayAll {
             }
         }
         System.out.println("numa=" + numa);
-
+        String s = Arrays.toString(a[0]);
+        System.out.println(s.charAt(1));
+//        System.out.println(); Arrays.toString(Arrays.parallelSort(a[0]));
+        Arrays.sort(a[0]);
+        s = Arrays.toString(a[0]);
+        System.out.println(s);
     }
+
 }

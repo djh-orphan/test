@@ -1,7 +1,14 @@
 package com.djh.test;
 
-
+//基础变量的定义包含声明以及初始化（指赋值）
+//引用变量的定义包含声明以及初始化（指引用）
+// 基础变量在声明时不会被初始化默认值，需要显式赋值；
+// 数组是引用型变量，一旦初始化（指的是创建内存空间并引用）如果没有显式初始化则会对每个元素进行初始化为默认值
+// 成员变量会在初始化时被赋予默认值，局部变量一般不会
+// 数组的每个元素就相当于成员变量
 public class Love {
+    public int i;
+
     public static void main(String[] args) {
 // heart
 
@@ -16,7 +23,8 @@ public class Love {
                 "\t            *\t\t*\t\n" +
                 "\t              \t*\t\n");
 
-
+        int a[] = new int[2];
+        System.out.println(a[1]);
 //        long a=1221323222220222222L;
 //        char a = 65;
 //        byte b = 12;
@@ -49,7 +57,7 @@ public class Love {
         boolean x = true;
         boolean y = false;
         short z = 42;
-        //if(y == true)
+        //在if内写y=true 会给y重新赋值true并返回true
         if ((z++ == 42) && (y = true)) {
             z++;
             System.out.println(y);
