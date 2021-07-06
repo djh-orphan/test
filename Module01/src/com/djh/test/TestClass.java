@@ -25,9 +25,10 @@ public class TestClass {
 //            if (stu[i].state == 3)
 //                System.out.println(stu[i].ID + "\t");
         }
+
+        //冒泡排序
         Student st;
         for (int i = 0; i < stu.length; i++) {
-//            int j=i+1;
             for (int j = 0; j < stu.length - 1 - i; j++) {
                 if (stu[j].score < stu[j + 1].score) {
                     st = stu[j];
