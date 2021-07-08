@@ -1,5 +1,6 @@
 package com.djh.test;
 
+
 public class TestClass {
     public static void main(String[] args) {
         //测试一
@@ -27,6 +28,32 @@ public class TestClass {
         }
 
         //冒泡排序
+//        Student st;
+//        for (int i = 0; i < stu.length; i++) {
+//            for (int j = 0; j < stu.length - 1 - i; j++) {
+//                if (stu[j].score < stu[j + 1].score) {
+//                    st = stu[j];
+//                    stu[j] = stu[j + 1];
+//                    stu[j + 1] = st;
+//                }
+//            }
+//        }
+//        bubbleSort(stu);
+        //快速排序
+        quickSort(stu, 0, stu.length - 1);
+        for (int i = 0; i < 20; i++) {
+            System.out.println(i + 1 + ":" + stu[i].ID + ":" + stu[i].score);
+        }
+    }
+
+    /**
+     * @param stu
+     * @return void
+     * 冒泡排序的实现
+     * @author duan
+     * @date 2021-07-08 21:07
+     */
+    public static void bubbleSort(Student[] stu) {
         Student st;
         for (int i = 0; i < stu.length; i++) {
             for (int j = 0; j < stu.length - 1 - i; j++) {
@@ -37,8 +64,38 @@ public class TestClass {
                 }
             }
         }
-        for (int i = 0; i < 20; i++) {
-            System.out.println(stu[i].ID + ":" + stu[i].score);
+    }
+
+    /**
+     * @param stu
+     * @param leftIndex
+     * @param rightIndex
+     * @return void
+     * 快速排序
+     * @author duan
+     * @date 2021-07-08 21:07
+     */
+    public static void quickSort(Student[] stu, int leftIndex, int rightIndex) {
+        if (leftIndex >= rightIndex)
+            return;
+        Student st;
+
+        int left = leftIndex;
+        int right = rightIndex;
+        st = stu[left];
+        while (left < right) {
+            while (left < right && stu[right].score > st.score) {
+                right--;
+            }
+            stu[left] = stu[right];
+            while (left < right && stu[left].score < st.score) {
+                left++;
+            }
+            stu[right] = stu[left];
         }
+        stu[left] = st;
+        int temp = left;
+        quickSort(stu, leftIndex, temp - 1);
+        quickSort(stu, temp + 1, rightIndex);
     }
 }
