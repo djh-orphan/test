@@ -18,5 +18,16 @@ public class AddSubTest {
         System.out.println("i=" + i);
         System.out.println("i2=" + i2);
 
+        //array 默认值测试
+        //测试发现，除char数组之外，其余数组输出首地址，char数组输出第一个元素
+        String st[] = new String[20];
+        st[0] = new String();
+        System.out.println(st[0]);
+        char a[] = new char[10];
+        System.out.println(a);
+        Student s[] = new Student[20];
+//        s[0].ID=1;
+        System.out.println(s[0]);
+
     }
 }

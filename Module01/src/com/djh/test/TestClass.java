@@ -63,6 +63,28 @@ public class TestClass {
 //        for (int i = 0; i < size; i++) {
 //            System.out.println(i + 1 + ":" + stu1[i].ID + ":" + stu1[i].score);
 //        }
+        //参数传递测试
+        Circle c = new Circle();
+        PassObject pass = new PassObject();
+        pass.printAreas(c, 5);
+
+        //阶乘测试
+        int n = jiecheng(3);
+        System.out.println(n);
+
+//        Scanner scs = new Scanner(System.in);
+//        System.out.println(sc.hasNext());
+//        while (!scs.hasNext("exit")){
+////            System.out.println("you");
+//            String word=scs.nextLine();
+//            System.out.println(word);
+////            scs=new Scanner(System.in);
+//        }
+
+        int i;
+        while ((i = sc.nextInt()) != 0) {
+            System.out.println(i);
+        }
     }
 
 
@@ -104,4 +126,14 @@ public class TestClass {
         quickSort(stu, leftIndex, temp - 1);
         quickSort(stu, temp + 1, rightIndex);
     }
+
+    //阶乘算法的递归实现
+    public static int jiecheng(int n) {
+        if (n == 1)
+            return 1;
+        else
+            return n * jiecheng(n - 1);
+    }
+
+
 }
