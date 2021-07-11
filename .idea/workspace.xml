@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端" />
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/ServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Sever.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Sever.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/socket/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/socket/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/SocketSever.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +166,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Client 3">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -166,6 +175,13 @@
       <module />
     </configuration>
     <configuration name="Client 2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.djh.socket.Client" />
+      <module name="socket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client 3" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.djh.socket.Client" />
       <module name="socket" />
       <method v="2">
@@ -234,15 +250,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -275,6 +289,7 @@
     <list>
       <item itemvalue="Application.Love" />
       <item itemvalue="Application.Client 2" />
+      <item itemvalue="Application.Client 3" />
       <item itemvalue="Application.TestClass" />
       <item itemvalue="Application.Sever" />
       <item itemvalue="Application.Client" />
@@ -310,7 +325,8 @@
       <workItem from="1625705620857" duration="313000" />
       <workItem from="1625705953544" duration="4778000" />
       <workItem from="1625725137477" duration="19443000" />
-      <workItem from="1625888911986" duration="13638000" />
+      <workItem from="1625888911986" duration="18443000" />
+      <workItem from="1625968681414" duration="1126000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -396,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625923362899</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端">
+      <created>1625926529040</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625926529040</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

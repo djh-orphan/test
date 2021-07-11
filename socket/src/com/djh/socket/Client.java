@@ -12,8 +12,8 @@ import java.util.Scanner;
  */
 public class Client {
    public static void main(String[] args) throws IOException {
-      InetAddress addr = InetAddress.getByName("127.0.0.2");
-      Socket client = new Socket("127.0.0.3", 1234, addr, 4550);
+      InetAddress addr = InetAddress.getByName("192.168.0.102");
+      Socket client = new Socket("192.144.210.195", 1234, addr, 4552);
       PrintWriter output =
               new PrintWriter(client.getOutputStream(), true);
       Scanner sc = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class Client {
 //        while (!sc.hasNext("e")){
       while (true) {
          words = sc.nextLine();
-         output.println(words);
+         output.println("客户端3：" + words);
          System.out.println("客户端写出了：" + words);
          if (!sc.hasNext("exit")) {
             continue;

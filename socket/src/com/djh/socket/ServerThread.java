@@ -29,7 +29,7 @@ public class ServerThread extends Thread {
             //循环读取客户端信息
             while ((info = bufferedReader.readLine()) != null) {
                 //获取客户端的ip地址及发送数据
-                System.out.println("服务器端接收：" + "{'from_client':'" + socket.getInetAddress().getHostAddress() + "','data':'" + info + "'}");
+                System.out.println("服务器端接收：" + "{'from_client':'" + socket.getInetAddress().getHostName() + "','data':'" + info + "'}");
             }
 
             socket.shutdownInput();//关闭输入流
