@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端">
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/ServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Sever.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Sever.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/socket/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/socket/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/SocketSever.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/Sever.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module01/src/com/djh/test/Sever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/SocketSever.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SoketSever.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -166,7 +167,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.Client 3">
+  <component name="RunManager" selected="Application.ClientTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -175,22 +176,36 @@
       <module />
     </configuration>
     <configuration name="Client 2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.djh.socket.Client" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
       <module name="socket" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Client 3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.djh.socket.Client" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
       <module name="socket" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.socket.Client" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
       <module name="socket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
+      <module name="socket" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -201,7 +216,7 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.test.*" />
+          <option name="PATTERN" value="com.djh.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -210,19 +225,19 @@
       </method>
     </configuration>
     <configuration name="Sever" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.socket.Sever" />
-      <module name="socket" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.test.Sever" />
+      <module name="Module01" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="SocketServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.socket.SocketServer" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.sever.SocketServer" />
       <module name="socket" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.socket.*" />
+          <option name="PATTERN" value="com.djh.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -236,7 +251,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.test.*" />
+          <option name="PATTERN" value="com.djh.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -294,9 +309,11 @@
       <item itemvalue="Application.Sever" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.SocketServer" />
+      <item itemvalue="Application.ClientTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientTest" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.Sever" />
@@ -326,7 +343,7 @@
       <workItem from="1625705953544" duration="4778000" />
       <workItem from="1625725137477" duration="19443000" />
       <workItem from="1625888911986" duration="18443000" />
-      <workItem from="1625968681414" duration="1126000" />
+      <workItem from="1625968681414" duration="5669000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -419,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625926529040</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端">
+      <created>1625978933508</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1625978933508</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

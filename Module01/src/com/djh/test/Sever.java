@@ -1,4 +1,4 @@
-package com.djh.socket;
+package com.djh.test;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

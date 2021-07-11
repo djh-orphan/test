@@ -1,4 +1,4 @@
-package com.djh.socket;
+package com.djh.client;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Client {
    public static void main(String[] args) throws IOException {
-      InetAddress addr = InetAddress.getByName("192.168.0.102");
+      InetAddress addr = InetAddress.getByName("192.168.0.107");
       Socket client = new Socket("192.144.210.195", 1234, addr, 4552);
       PrintWriter output =
               new PrintWriter(client.getOutputStream(), true);

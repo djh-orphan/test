@@ -1,4 +1,4 @@
-package com.djh.socket;
+package com.djh.sever;
 
 
 import java.io.*;
@@ -19,9 +19,13 @@ class SocketServer {
                 socket = serverSocket.accept();//侦听并接受到此套接字的连接
                 InetAddress inetAddress = socket.getInetAddress();//获取客户端的连接
                 ServerThread thread = new ServerThread(socket, inetAddress);//自己创建的线程类
+                Exception e = thread.erro;
                 thread.start();//启动线程
                 count++;//如果正确建立连接
                 System.out.println("客户端数量：" + count);//打印客户端数量
+                if (e.getMessage().equals("Connection reset")) {
+                    count--;
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

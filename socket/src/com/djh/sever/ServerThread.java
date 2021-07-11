@@ -1,4 +1,4 @@
-package com.djh.socket;
+package com.djh.sever;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -7,7 +7,7 @@ import java.net.Socket;
 public class ServerThread extends Thread {
     Socket socket = null;
     InetAddress inetAddress = null;//接收客户端的连接
-
+    Exception erro = null;
     public ServerThread(Socket socket, InetAddress inetAddress) {
         this.socket = socket;
         this.inetAddress = inetAddress;
@@ -39,8 +39,8 @@ public class ServerThread extends Thread {
             writer = new OutputStreamWriter(outputStream, "UTF-8");
             writer.write("{'to_client':'" + inetAddress.getHostAddress() + "','data':'我是服务器数据'}");
             writer.flush();//清空缓冲区数据
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            erro = e;
         } finally {
             //关闭资源
             try {
