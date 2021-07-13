@@ -70,7 +70,8 @@ public class ServerThread extends Thread {
                     out.println("You have logined");
                     name = info.substring(7, info.length());
                     clientThread.put(name, this);
-                    broadcast(name + " has logined", false);
+                    broadcast(name + " has logined", "");
+//                    broadcast(name + " has logined", false);
                     break;
                 }
             }
@@ -84,31 +85,22 @@ public class ServerThread extends Thread {
         try {
             while (true) {
                 info = in.readLine();
-//                if (info.equals("/quit")) {
-//                    if (name != null)
-//                        clientThread.remove(name);
-//                    System.out.println(name + "quit");
-//                    broadcast(name + " has quit");
-////                    Enumeration<String> ee = clientThread.keys();
-////                    String usr = "";
-////                    System.out.println("当前在线用户：");
-////                    while (ee.hasMoreElements()) {
-////                        usr += ee.nextElement() + "\n";
-////                    }
-////                    System.out.println(usr);
-//
-////                    System.out.println();
-//                    out.println("you has quit.");
-//                    break;
-//                }
+
                 if (isQuit(info)) {
                     break;
                 }
                 if (isPrivate(info)) {
                     continue;
                 }
+                if (isWho(info)) {
+                    continue;
+                }
+                if (isPreSet(info)) {
+                    continue;
+                }
                 out.println("你说：" + info);
-                broadcast(info, true);
+                broadcast(name + "说：" + info, "");
+//                broadcast(info, true);
                 System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
                         "','data':'" + info + "'}");
             }
@@ -117,19 +109,31 @@ public class ServerThread extends Thread {
     }
 
 
-    public void broadcast(String message, boolean isTalking) {
-        if (isTalking) {
-            for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
-                if (!name.equals(entry.getKey()))
-                    entry.getValue().sendMessage(name + "说：" + message);
-            }
-        } else {
-            for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
-                if (!name.equals(entry.getKey()))
-                    entry.getValue().sendMessage(message);
-            }
-        }
+//    public void broadcast(String message, boolean isTalking) {
+//        if (isTalking) {
+//            for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
+//                if (!name.equals(entry.getKey()))
+//                    entry.getValue().sendMessage(name + "说：" + message);
+//            }
+//        } else {
+//            for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
+//                if (!name.equals(entry.getKey()))
+//                    entry.getValue().sendMessage(message);
+//            }
+//        }
+//
+//    }
 
+    public void broadcast(String message, String names) {
+        for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
+            if (!name.equals(entry.getKey())) {
+                if (!names.equals(entry.getKey())) {
+                    entry.getValue().sendMessage(message);
+                }
+            }
+//            if ((!names.equals(entry.getKey()))&&(!name.equals(entry.getKey())))
+//                entry.getValue().sendMessage(message);
+        }
     }
 
     public boolean isQuit(String info) {
@@ -137,7 +141,8 @@ public class ServerThread extends Thread {
             if (name != null)
                 clientThread.remove(name);
             System.out.println(name + "quit");
-            broadcast(name + " has quit", false);
+//            broadcast(name + " has quit", false);
+            broadcast(name + " has quit", "");
             out.println("you has quit.");
             return true;
 //            break;
@@ -168,6 +173,50 @@ public class ServerThread extends Thread {
         }
     }
 
+    public boolean isWho(String info) {
+        if ("/who".equals(info.substring(0, 4))) {
+            String usr = "用户名\n";
+            for (String temp : clientThread.keySet()) {
+                usr += temp + " \n";
+            }
+            usr += "Total online user: " + clientThread.size();
+            sendMessage(usr);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isPreSet(String info) {
+        if ("//".equals(info.substring(0, 2))) {
+            String InfoSpilt[] = info.split("\\s+");
+            String InfoPreSet = InfoSpilt[0];
+            if ("//hi".equals(InfoPreSet)) {
+                if (InfoSpilt.length >= 2) {
+                    String nameFromInfo = InfoSpilt[InfoSpilt.length - 1];
+                    if (!clientThread.containsKey(nameFromInfo)) {
+                        sendMessage("user_name is not online.");
+                        return true;
+                    } else if (name.equals(nameFromInfo)) {
+                        sendMessage("You can't say hi to yourself!! Please stop talking to yourself!!");
+                        return true;
+                    } else {
+                        sendMessage("你向" + nameFromInfo + "打招呼：“Hi，你好啊~~”");
+                        sendMessage(nameFromInfo, name + "向你打招呼：“Hi，你好啊~”");
+                        broadcast(name + "向" + nameFromInfo + "打招呼：“Hi，你好啊~”", nameFromInfo);
+                        return true;
+                    }
+                } else {
+                    sendMessage("你向大家打招呼，“Hi，大家好！我来咯~”");
+                    broadcast(name + "向大家打招呼，“Hi，大家好！我来咯~”", "");
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
 
     public void sendMessage(String message) {
         out.println(message);

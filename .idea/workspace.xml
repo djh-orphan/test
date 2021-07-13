@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.11&#10;调整">
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/Se.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" afterDir="false" />
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.13&#10;已实现：&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;&#10;TODO：&#10;1.//hi &#10;2./who&#10;3./history">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Module01/com/djh/test/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Module01/com/djh/test/Circle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Module01/com/djh/test/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Module01/com/djh/test/TestClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/ServerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Sever.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/SoketSever.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,9 +318,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SocketServer" />
-        <item itemvalue="Application.ClientTest" />
         <item itemvalue="Application.ClientTest 2" />
+        <item itemvalue="Application.ClientTest" />
+        <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Sever" />
       </list>
@@ -365,7 +353,7 @@
       <workItem from="1626000243807" duration="18106000" />
       <workItem from="1626144665399" duration="5054000" />
       <workItem from="1626157511969" duration="3736000" />
-      <workItem from="1626161294605" duration="8921000" />
+      <workItem from="1626161294605" duration="16317000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -472,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625983412502</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2021.7.13&#10;已实现：&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;&#10;TODO：&#10;1.//hi &#10;2./who&#10;3./history">
+      <created>1626170744221</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1626170744221</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -567,7 +562,8 @@
     <MESSAGE value="2021.7.9 &#10;学习冒泡排序和快速排序 并测试。 &#10;在随机性较好的情况下，快速排序具有较好的优越性。&#10;下一步将研究快速排序的非递归实现以及java的后续学习。" />
     <MESSAGE value="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端" />
     <MESSAGE value="2021.7.11&#10;调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.7.11&#10;调整" />
+    <MESSAGE value="2021.7.13&#10;已实现：&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;&#10;TODO：&#10;1.//hi &#10;2./who&#10;3./history" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.7.13&#10;已实现：&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;&#10;TODO：&#10;1.//hi &#10;2./who&#10;3./history" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
