@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端">
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.11&#10;调整">
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/Se.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/Sever.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module01/src/com/djh/test/Sever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/socket/SocketSever.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SoketSever.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Module01/com/djh/test/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Module01/com/djh/test/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Module01/com/djh/test/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Module01/com/djh/test/TestClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/ServerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/Sever.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/socket/com/djh/socket/SocketServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/SoketSever.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +56,6 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -175,20 +180,6 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="Client 2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
-      <module name="socket" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Client 3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
-      <module name="socket" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
       <module name="socket" />
@@ -196,10 +187,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClientTest 2" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientTest 3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
       <module name="socket" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.djh.client.*" />
@@ -248,7 +264,6 @@
     <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.djh.test.TestClass" />
       <module name="Module01" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.djh.client.*" />
@@ -265,13 +280,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -303,8 +320,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Love" />
-      <item itemvalue="Application.Client 2" />
-      <item itemvalue="Application.Client 3" />
+      <item itemvalue="Application.ClientTest 3" />
+      <item itemvalue="Application.ClientTest 2" />
       <item itemvalue="Application.TestClass" />
       <item itemvalue="Application.Sever" />
       <item itemvalue="Application.Client" />
@@ -313,11 +330,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientTest" />
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.SocketServer" />
+        <item itemvalue="Application.ClientTest" />
+        <item itemvalue="Application.ClientTest 2" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Sever" />
-        <item itemvalue="Application.TestClass" />
       </list>
     </recent_temporary>
   </component>
@@ -343,7 +360,12 @@
       <workItem from="1625705953544" duration="4778000" />
       <workItem from="1625725137477" duration="19443000" />
       <workItem from="1625888911986" duration="18443000" />
-      <workItem from="1625968681414" duration="5669000" />
+      <workItem from="1625968681414" duration="17041000" />
+      <workItem from="1625996749840" duration="3460000" />
+      <workItem from="1626000243807" duration="18106000" />
+      <workItem from="1626144665399" duration="5054000" />
+      <workItem from="1626157511969" duration="3736000" />
+      <workItem from="1626161294605" duration="8921000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -443,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625978933508</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2021.7.11&#10;调整">
+      <created>1625983412502</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1625983412502</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -537,7 +566,8 @@
     <MESSAGE value="2021年七月六号 java学习 面向对象的编程" />
     <MESSAGE value="2021.7.9 &#10;学习冒泡排序和快速排序 并测试。 &#10;在随机性较好的情况下，快速排序具有较好的优越性。&#10;下一步将研究快速排序的非递归实现以及java的后续学习。" />
     <MESSAGE value="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.7.10&#10;开始学习socket编程 实现简单客户端和服务端" />
+    <MESSAGE value="2021.7.11&#10;调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.7.11&#10;调整" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -550,6 +580,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="10" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="12" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
