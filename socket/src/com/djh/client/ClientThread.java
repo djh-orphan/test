@@ -32,7 +32,7 @@ public class ClientThread extends Thread {
                 if (message == null) {
                     client.close();
                     isRunning = false;
-                    return;
+                    break;
                 }
                 if (message.equals("you has quit")) {
                     System.out.println(message);

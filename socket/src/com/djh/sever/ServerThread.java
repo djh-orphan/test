@@ -202,13 +202,13 @@ public class ServerThread extends Thread {
     }
 
     public boolean isPreSet(String info) {
-        String InfoSpilt[] = info.split("\\s+");
-        if (InfoSpilt[0].length() >= 2) {
-            if ("//".equals(InfoSpilt[0].substring(0, 2))) {
-                String InfoPreSet = InfoSpilt[0];
-                if ("//hi".equals(InfoPreSet)) {
-                    if (InfoSpilt.length >= 2) {
-                        String nameFromInfo = InfoSpilt[InfoSpilt.length - 1];
+        String infoSpilt[] = info.split("\\s+");
+        if (infoSpilt[0].length() >= 2) {
+            if ("//".equals(infoSpilt[0].substring(0, 2))) {
+                String infoPreSet = infoSpilt[0];
+                if ("//hi".equals(infoPreSet)) {
+                    if (infoSpilt.length >= 2) {
+                        String nameFromInfo = infoSpilt[infoSpilt.length - 1];
                         if (!clientThread.containsKey(nameFromInfo)) {
                             sendMessage("user_name is not online.");
                             message.add(info);
@@ -230,6 +230,31 @@ public class ServerThread extends Thread {
                         message.add(info);
                         return true;
                     }
+                } else if ("//smile".equals(infoPreSet)) {
+                    if (infoSpilt.length >= 2) {
+                        String nameFromInfo = infoSpilt[infoSpilt.length - 1];
+                        if (!clientThread.containsKey(nameFromInfo)) {
+                            sendMessage("user_name is not online.");
+                            message.add(info);
+                            return true;
+                        } else if (name.equals(nameFromInfo)) {
+                            sendMessage("You can't smile to yourself!! Please stop talking to yourself!!");
+                            message.add(info);
+                            return true;
+                        } else {
+                            sendMessage(name, "你向" + nameFromInfo + "露出了天真无邪的笑容。");
+                            sendMessage(nameFromInfo, name + "向你露出了天真无邪的笑容。");
+                            broadcast(name + "向" + nameFromInfo + "露出了天真无邪的笑容，大家快来围观！", nameFromInfo);
+                            message.add(info);
+                            return true;
+                        }
+
+                    } else {
+                        sendMessage("你向大家打招呼，脸上露出天真无邪的笑容");
+                        broadcast("大家好，我是" + name + "（脸上带着天真无邪的笑容，这家伙不像是好人，大家不要相信他！）", "");
+                        message.add(info);
+                        return true;
+                    }
                 }
                 return false;
             } else {
@@ -241,12 +266,12 @@ public class ServerThread extends Thread {
     }
 
     public boolean isHistory(String info) {
-        String InfoSpilt[] = info.split("\\s+");
-        if ("/history".equals(InfoSpilt[0])) {
+        String infoSpilt[] = info.split("\\s+");
+        if ("/history".equals(infoSpilt[0])) {
             String history = "";
-            if (InfoSpilt.length >= 2) {
-                int startIndex = Integer.parseInt(InfoSpilt[1]);
-                int maxCount = Integer.parseInt(InfoSpilt[2]);
+            if (infoSpilt.length >= 2) {
+                int startIndex = Integer.parseInt(infoSpilt[1]);
+                int maxCount = Integer.parseInt(infoSpilt[2]);
                 message.add(info);
                 if (startIndex < message.size()) {
                     if (startIndex + maxCount < message.size()) {

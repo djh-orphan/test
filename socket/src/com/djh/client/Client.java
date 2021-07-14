@@ -74,10 +74,7 @@ public class Client {
     public void talk() throws IOException {
         try {
             clientThread.start();
-            while (true) {
-                if (!clientThread.isRunning) {
-                    break;
-                }
+            while (clientThread.isRunning) {
                 String commandLine = sc.nextLine();
                 if (commandLine.length() == 0) {
                     output.println("Please input invalid message!");
