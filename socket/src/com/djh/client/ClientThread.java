@@ -43,7 +43,7 @@ public class ClientThread extends Thread {
                     System.out.println(message);
                 }
             } catch (IOException e) {
-
+                e.printStackTrace();
             }
 
         }

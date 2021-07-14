@@ -74,13 +74,21 @@ public class Client {
     public void talk() throws IOException {
         try {
             clientThread.start();
-            while (clientThread.isRunning) {
+            while (true) {
+                if (!clientThread.isRunning) {
+                    break;
+                }
                 String commandLine = sc.nextLine();
-                output.println(commandLine);
+                if (commandLine.length() == 0) {
+                    output.println("Please input invalid message!");
+                    continue;
+                } else {
+                    output.println(commandLine);
+                }
             }
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 

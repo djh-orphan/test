@@ -1,5 +1,7 @@
 package com.djh.test;
 
+import java.util.Scanner;
+
 public class AddSubTest {
     public static void main(String[] args) {
         //自加自减测试
@@ -29,5 +31,11 @@ public class AddSubTest {
 //        s[0].ID=1;
         System.out.println(s[0]);
 
+
+        Scanner sc = new Scanner(System.in);
+        String cd = sc.nextLine();
+        String cc = "";
+        System.out.println(cd.length());
+        System.out.println(cc.length());
     }
 }

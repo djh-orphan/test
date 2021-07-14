@@ -92,6 +92,9 @@ public class ServerThread extends Thread {
                 if (isQuit(info)) {
                     break;
                 }
+                if (isNull(info)) {
+                    continue;
+                }
                 if (isPrivate(info)) {
                     continue;
                 }
@@ -112,6 +115,13 @@ public class ServerThread extends Thread {
                         "','data':'" + info + "'}");
             }
         } catch (Exception e) {
+            e.printStackTrace();
+            if ("Connection reset".equals(e.getMessage())) {
+                if (name != null) {
+                    clientThread.remove(name);
+                    return;
+                }
+            }
         }
     }
 
@@ -141,9 +151,17 @@ public class ServerThread extends Thread {
         return false;
     }
 
+    public boolean isNull(String info) {
+        if ("Please input invalid message!".equals(info)) {
+            sendMessage(info);
+            return true;
+        }
+        return false;
+    }
+
     public boolean isPrivate(String info) {
-        if ("/to ".equals(info.substring(0, 4))) {
-            String infoSpilt[] = info.split("\\s+");
+        String infoSpilt[] = info.split("\\s+");
+        if ("/to".equals(infoSpilt[0])) {
             String nameFromInfo = infoSpilt[1];
             if (!clientThread.containsKey(nameFromInfo)) {
                 sendMessage("user_name is not online.");
@@ -168,7 +186,8 @@ public class ServerThread extends Thread {
     }
 
     public boolean isWho(String info) {
-        if ("/who".equals(info.substring(0, 4))) {
+        String infoSpilt[] = info.split("\\s+");
+        if ("/who".equals(infoSpilt[0])) {
             String usr = "用户名\n";
             for (String temp : clientThread.keySet()) {
                 usr += temp + " \n";
@@ -183,43 +202,47 @@ public class ServerThread extends Thread {
     }
 
     public boolean isPreSet(String info) {
-        if ("//".equals(info.substring(0, 2))) {
-            String InfoSpilt[] = info.split("\\s+");
-            String InfoPreSet = InfoSpilt[0];
-            if ("//hi".equals(InfoPreSet)) {
-                if (InfoSpilt.length >= 2) {
-                    String nameFromInfo = InfoSpilt[InfoSpilt.length - 1];
-                    if (!clientThread.containsKey(nameFromInfo)) {
-                        sendMessage("user_name is not online.");
-                        message.add(info);
-                        return true;
-                    } else if (name.equals(nameFromInfo)) {
-                        sendMessage("You can't say hi to yourself!! Please stop talking to yourself!!");
-                        message.add(info);
-                        return true;
+        String InfoSpilt[] = info.split("\\s+");
+        if (InfoSpilt[0].length() >= 2) {
+            if ("//".equals(InfoSpilt[0].substring(0, 2))) {
+                String InfoPreSet = InfoSpilt[0];
+                if ("//hi".equals(InfoPreSet)) {
+                    if (InfoSpilt.length >= 2) {
+                        String nameFromInfo = InfoSpilt[InfoSpilt.length - 1];
+                        if (!clientThread.containsKey(nameFromInfo)) {
+                            sendMessage("user_name is not online.");
+                            message.add(info);
+                            return true;
+                        } else if (name.equals(nameFromInfo)) {
+                            sendMessage("You can't say hi to yourself!! Please stop talking to yourself!!");
+                            message.add(info);
+                            return true;
+                        } else {
+                            sendMessage("你向" + nameFromInfo + "打招呼：“Hi，你好啊~~”");
+                            sendMessage(nameFromInfo, name + "向你打招呼：“Hi，你好啊~”");
+                            broadcast(name + "向" + nameFromInfo + "打招呼：“Hi，你好啊~”", nameFromInfo);
+                            message.add(info);
+                            return true;
+                        }
                     } else {
-                        sendMessage("你向" + nameFromInfo + "打招呼：“Hi，你好啊~~”");
-                        sendMessage(nameFromInfo, name + "向你打招呼：“Hi，你好啊~”");
-                        broadcast(name + "向" + nameFromInfo + "打招呼：“Hi，你好啊~”", nameFromInfo);
+                        sendMessage("你向大家打招呼，“Hi，大家好！我来咯~”");
+                        broadcast(name + "向大家打招呼，“Hi，大家好！我来咯~”", "");
                         message.add(info);
                         return true;
                     }
-                } else {
-                    sendMessage("你向大家打招呼，“Hi，大家好！我来咯~”");
-                    broadcast(name + "向大家打招呼，“Hi，大家好！我来咯~”", "");
-                    message.add(info);
-                    return true;
                 }
+                return false;
+            } else {
+                return false;
             }
-            return false;
         } else {
             return false;
         }
     }
 
     public boolean isHistory(String info) {
-        if ("/history".equals(info.substring(0, 8))) {
-            String InfoSpilt[] = info.split("\\s+");
+        String InfoSpilt[] = info.split("\\s+");
+        if ("/history".equals(InfoSpilt[0])) {
             String history = "";
             if (InfoSpilt.length >= 2) {
                 int startIndex = Integer.parseInt(InfoSpilt[1]);
