@@ -126,7 +126,7 @@ public class ServerThread extends Thread {
     }
 
 
-    public void broadcast(String message, String names) {
+    private void broadcast(String message, String names) {
         for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
             if (!name.equals(entry.getKey())) {
                 if (!names.equals(entry.getKey())) {
@@ -138,7 +138,7 @@ public class ServerThread extends Thread {
         }
     }
 
-    public boolean isQuit(String info) {
+    private boolean isQuit(String info) {
         if (info.equals("/quit")) {
             if (name != null)
                 clientThread.remove(name);
@@ -151,7 +151,7 @@ public class ServerThread extends Thread {
         return false;
     }
 
-    public boolean isNull(String info) {
+    private boolean isNull(String info) {
         if ("Please input invalid message!".equals(info)) {
             sendMessage(info);
             return true;
@@ -159,7 +159,7 @@ public class ServerThread extends Thread {
         return false;
     }
 
-    public boolean isPrivate(String info) {
+    private boolean isPrivate(String info) {
         String infoSpilt[] = info.split("\\s+");
         if ("/to".equals(infoSpilt[0])) {
             String nameFromInfo = infoSpilt[1];
@@ -185,7 +185,7 @@ public class ServerThread extends Thread {
         }
     }
 
-    public boolean isWho(String info) {
+    private boolean isWho(String info) {
         String infoSpilt[] = info.split("\\s+");
         if ("/who".equals(infoSpilt[0])) {
             String usr = "用户名\n";
@@ -201,7 +201,7 @@ public class ServerThread extends Thread {
         }
     }
 
-    public boolean isPreSet(String info) {
+    private boolean isPreSet(String info) {
         String infoSpilt[] = info.split("\\s+");
         if (infoSpilt[0].length() >= 2) {
             if ("//".equals(infoSpilt[0].substring(0, 2))) {
@@ -265,7 +265,7 @@ public class ServerThread extends Thread {
         }
     }
 
-    public boolean isHistory(String info) {
+    private boolean isHistory(String info) {
         String infoSpilt[] = info.split("\\s+");
         if ("/history".equals(infoSpilt[0])) {
             String history = "";
@@ -314,11 +314,11 @@ public class ServerThread extends Thread {
 
     }
 
-    public void sendMessage(String message) {
+    private void sendMessage(String message) {
         out.println(message);
     }
 
-    public void sendMessage(String name, String message) {
+    private void sendMessage(String name, String message) {
         clientThread.get(name).out.println(message);
     }
 

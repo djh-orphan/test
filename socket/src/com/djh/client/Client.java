@@ -31,8 +31,9 @@ public class Client {
                     new BufferedReader(new InputStreamReader(this.client.getInputStream()));
             this.clientThread = new ClientThread(this.client, this.output, this.input, this.name);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
+
     }
 
 
@@ -66,7 +67,7 @@ public class Client {
             }
         } catch (Exception e) {
 
-            e.printStackTrace();
+//            e.printStackTrace();
 
         }
     }
@@ -85,7 +86,7 @@ public class Client {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 

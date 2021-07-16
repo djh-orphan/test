@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;TODO：">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +164,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.ClientTest">
+  <component name="RunManager" selected="Application.ClientTest 3">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -310,8 +314,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientTest" />
         <item itemvalue="Application.ClientTest 2" />
+        <item itemvalue="Application.ClientTest" />
         <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.AddSubTest" />
         <item itemvalue="Application.Client" />
@@ -347,7 +351,7 @@
       <workItem from="1626157511969" duration="3736000" />
       <workItem from="1626161294605" duration="19760000" />
       <workItem from="1626220849156" duration="4815000" />
-      <workItem from="1626244879207" duration="2953000" />
+      <workItem from="1626244879207" duration="7875000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -489,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626246776938</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;TODO：">
+      <created>1626265509337</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1626265509337</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
