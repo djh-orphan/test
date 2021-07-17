@@ -36,6 +36,7 @@ public class ClientThread extends Thread {
                 }
                 if (message.equals("you has quit")) {
                     System.out.println(message);
+//                    input.close();
                     client.close();
                     isRunning = false;
                     break;
@@ -44,6 +45,11 @@ public class ClientThread extends Thread {
                 }
             } catch (IOException e) {
 //                e.printStackTrace();
+                if ("Connection reset".equals(e.getMessage())) {
+                    System.out.println("与服务器的连接断开");
+                    isRunning = false;
+                }
+                return;
             }
 
         }

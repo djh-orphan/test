@@ -36,6 +36,13 @@ public class ServerThread extends Thread {
             login();
             talk();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
+            if ("Connection reset".equals(e.getMessage())) {
+                if (name != null) {
+                    clientThread.remove(name);
+                }
+                System.out.println(client.getInetAddress().getHostName() + "断开连接");
+            }
         } finally {
             //关闭资源
             try {
@@ -55,7 +62,7 @@ public class ServerThread extends Thread {
 
     }
 
-    public void login() {
+    public void login() throws IOException {
         String info = null;
         try {
             while (true) {
@@ -80,6 +87,8 @@ public class ServerThread extends Thread {
             }
 
         } catch (Exception e) {
+//            e.printStackTrace();
+            throw e;
         }
     }
 
@@ -90,6 +99,7 @@ public class ServerThread extends Thread {
                 info = in.readLine();
 
                 if (isQuit(info)) {
+                    client.close();
                     break;
                 }
                 if (isNull(info)) {
@@ -110,18 +120,12 @@ public class ServerThread extends Thread {
                 out.println("你说：" + info);
                 message.add(info);
                 broadcast(name + "说：" + info, "");
-//                broadcast(info, true);
                 System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
                         "','data':'" + info + "'}");
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            if ("Connection reset".equals(e.getMessage())) {
-                if (name != null) {
-                    clientThread.remove(name);
-                    return;
-                }
-            }
+//            e.printStackTrace();
+            throw e;
         }
     }
 

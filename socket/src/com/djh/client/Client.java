@@ -13,13 +13,13 @@ import java.util.Scanner;
  * @create 2021-07-10 16:43
  */
 public class Client {
+    public boolean isLogin = true;
     private Socket client;
     private PrintWriter output;
     private BufferedReader input;
     private final Scanner sc = new Scanner(System.in);
     private ClientThread clientThread;
     private String name;
-    public boolean isLogin = true;
 
     public Client(String IP) throws IOException {
         try {
@@ -31,6 +31,13 @@ public class Client {
                     new BufferedReader(new InputStreamReader(this.client.getInputStream()));
             this.clientThread = new ClientThread(this.client, this.output, this.input, this.name);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
+            if ("Connection refused: connect".equals(e.getMessage())) {
+                System.out.println("请检查客户端socket中目的IP地址是否正确");
+            }
+            if (e.getMessage().contains("Address already in use")) {
+                System.out.println("请检查客户端socket使用的源IP地址和本地端口是否已经被其他客户端使用");
+            }
             throw e;
         }
 
@@ -66,9 +73,12 @@ public class Client {
                 }
             }
         } catch (Exception e) {
-
-            e.printStackTrace();
-
+//            e.printStackTrace();
+            System.out.println(e.getMessage());
+            if ("Connection reset".equals(e.getMessage())) {
+                System.out.println("服务器端的连接断开,请重试");
+                isLogin = false;
+            }
         }
     }
 
@@ -77,6 +87,9 @@ public class Client {
             clientThread.start();
             while (clientThread.isRunning) {
                 String commandLine = sc.nextLine();
+                if (!clientThread.isRunning) {
+                    break;
+                }
                 if (commandLine.length() == 0) {
                     output.println("Please input invalid message!");
                     continue;
