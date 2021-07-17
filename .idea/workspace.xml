@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）">
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="修改一些语法问题">
+      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module01/Module01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Module01/Module01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/socket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/socket/socket.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/Se.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" afterDir="false" />
     </list>
@@ -89,11 +93,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProblemsViewState">
-    <hideBySeverity>
-      <option value="200" />
-    </hideBySeverity>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-14" />
     <option name="width" value="1528" />
@@ -159,17 +158,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="D:/Java/java_project" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit4.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="Application.ClientTest">
+  <component name="RunManager" selected="Application.Test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -187,13 +190,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.client.Client" />
-      <module name="socket" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -264,21 +260,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.Test" />
+      <module name="socket" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -312,18 +320,18 @@
       <item itemvalue="Application.Love" />
       <item itemvalue="Application.ClientTest 3" />
       <item itemvalue="Application.ClientTest 2" />
-      <item itemvalue="Application.Client" />
       <item itemvalue="Application.SocketServer" />
       <item itemvalue="Application.ClientTest" />
       <item itemvalue="Application.AddSubTest" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.ClientTest" />
         <item itemvalue="Application.ClientTest 2" />
-        <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.AddSubTest" />
-        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +366,10 @@
       <workItem from="1626220849156" duration="4815000" />
       <workItem from="1626244879207" duration="8811000" />
       <workItem from="1626482130335" duration="6981000" />
-      <workItem from="1626489483422" duration="4537000" />
+      <workItem from="1626489483422" duration="5631000" />
+      <workItem from="1626511865115" duration="3781000" />
+      <workItem from="1626516438588" duration="8238000" />
+      <workItem from="1626524942664" duration="2203000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -535,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626489264053</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="修改一些语法问题">
+      <created>1626510766410</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1626510766410</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -637,7 +655,8 @@
     <MESSAGE value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;TODO：" />
     <MESSAGE value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;11. 解决一部分异常处理" />
     <MESSAGE value="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）" />
+    <MESSAGE value="修改一些语法问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改一些语法问题" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

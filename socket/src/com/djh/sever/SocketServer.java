@@ -17,10 +17,11 @@ public class SocketServer {
         try {
             InetAddress addr = InetAddress.getByName("127.0.0.1");
             ServerSocket serverSocket = new ServerSocket(1234, 100, addr);
-            Socket client;
+//            Socket client;
             System.out.println("服务器启动");
             while (true) {
-                client = serverSocket.accept();
+                Socket client = serverSocket.accept();
+                System.out.println(client.getInetAddress().getHostName() + "接入");
                 ServerThread serverThread = new ServerThread(client, clientThread);
                 serverThread.start();
             }
