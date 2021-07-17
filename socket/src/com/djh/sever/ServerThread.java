@@ -25,7 +25,7 @@ public class ServerThread extends Thread {
             this.out = new PrintWriter(this.client.getOutputStream(), true);
             this.message = new ArrayList<>();
         } catch (Exception e) {
-
+            throw e;
         }
 
     }

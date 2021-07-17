@@ -258,19 +258,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -344,7 +331,7 @@
       <workItem from="1626157511969" duration="3736000" />
       <workItem from="1626161294605" duration="19760000" />
       <workItem from="1626220849156" duration="4815000" />
-      <workItem from="1626244879207" duration="8181000" />
+      <workItem from="1626244879207" duration="8811000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -500,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626404306865</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;11. 解决一部分异常处理">
+      <created>1626404596862</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1626404596862</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

@@ -67,7 +67,7 @@ public class Client {
             }
         } catch (Exception e) {
 
-//            e.printStackTrace();
+            e.printStackTrace();
 
         }
     }
@@ -86,7 +86,8 @@ public class Client {
             }
 
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
+//            throw e;
         }
     }
 
