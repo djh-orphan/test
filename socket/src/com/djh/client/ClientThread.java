@@ -11,9 +11,9 @@ import java.net.Socket;
  */
 public class ClientThread extends Thread {
     public boolean isRunning = true;
-    private Socket client = null;
-    private PrintWriter output = null;
-    private BufferedReader input = null;
+    private final Socket client;
+    private final PrintWriter output;
+    private final BufferedReader input;
     private String name;
 
     public ClientThread(Socket client, PrintWriter output, BufferedReader input, String name) {

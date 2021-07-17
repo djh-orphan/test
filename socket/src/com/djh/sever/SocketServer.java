@@ -11,13 +11,13 @@ import java.util.concurrent.ConcurrentHashMap;
  * @create 2021-07-13 14:31
  */
 public class SocketServer {
-    private static ConcurrentHashMap<String, ServerThread> clientThread = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, ServerThread> clientThread = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
         try {
             InetAddress addr = InetAddress.getByName("127.0.0.1");
             ServerSocket serverSocket = new ServerSocket(1234, 100, addr);
-            Socket client = null;
+            Socket client;
             System.out.println("服务器启动");
             while (true) {
                 client = serverSocket.accept();

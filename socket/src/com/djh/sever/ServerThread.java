@@ -9,25 +9,20 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerThread extends Thread {
-    private Socket client = null;
-    private PrintWriter out = null;
-    private BufferedReader in = null;
+    private final Socket client;
+    private final PrintWriter out;
+    private final BufferedReader in;
     private String name;
-    private ConcurrentHashMap<String, ServerThread> clientThread = null;
-    private ArrayList<String> message = null;
+    private final ConcurrentHashMap<String, ServerThread> clientThread;
+    private final ArrayList<String> message;
 
     public ServerThread(Socket socket, ConcurrentHashMap<String, ServerThread> clientThread) throws IOException {
-        try {
-            this.client = socket;
-            this.clientThread = clientThread;
-            this.in = new BufferedReader(new InputStreamReader(
-                    this.client.getInputStream()));
-            this.out = new PrintWriter(this.client.getOutputStream(), true);
-            this.message = new ArrayList<>();
-        } catch (Exception e) {
-            throw e;
-        }
-
+        this.client = socket;
+        this.clientThread = clientThread;
+        this.in = new BufferedReader(new InputStreamReader(
+                this.client.getInputStream()));
+        this.out = new PrintWriter(this.client.getOutputStream(), true);
+        this.message = new ArrayList<>();
     }
 
     @Override
@@ -63,69 +58,61 @@ public class ServerThread extends Thread {
     }
 
     public void login() throws IOException {
-        String info = null;
-        try {
-            while (true) {
-                info = in.readLine();
-                System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
-                        "','data':'" + info + "'}");
+        String info;
+        while (true) {
+            info = in.readLine();
+            System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
+                    "','data':'" + info + "'}");
 //                if (info.equals("/quit")) {
 //                    out.println("you just quit");
 //                    client.close();
 //                    break;
 //                }
-                if (clientThread.containsKey(info.substring(7, info.length()))) {
-                    out.println("Name exist, please choose another name.");
-                } else {
-                    out.println("You have logined");
-                    message.add(info);
-                    name = info.substring(7, info.length());
-                    clientThread.put(name, this);
-                    broadcast(name + " has logined", "");
-                    break;
-                }
-            }
+            String[] infoSpilt = info.split("\\s+");
 
-        } catch (Exception e) {
-//            e.printStackTrace();
-            throw e;
+            if (clientThread.containsKey(infoSpilt[1])) {
+                out.println("Name exist, please choose another name.");
+            } else {
+                out.println("You have logined");
+                message.add(info);
+                name = infoSpilt[1];
+                clientThread.put(name, this);
+                broadcast(name + " has logined", "");
+                break;
+            }
         }
+
     }
 
     public void talk() throws IOException {
         String info;
-        try {
-            while (true) {
-                info = in.readLine();
+        while (true) {
+            info = in.readLine();
 
-                if (isQuit(info)) {
-                    client.close();
-                    break;
-                }
-                if (isNull(info)) {
-                    continue;
-                }
-                if (isPrivate(info)) {
-                    continue;
-                }
-                if (isWho(info)) {
-                    continue;
-                }
-                if (isPreSet(info)) {
-                    continue;
-                }
-                if (isHistory(info)) {
-                    continue;
-                }
-                out.println("你说：" + info);
-                message.add(info);
-                broadcast(name + "说：" + info, "");
-                System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
-                        "','data':'" + info + "'}");
+            if (isQuit(info)) {
+                client.close();
+                break;
             }
-        } catch (Exception e) {
-//            e.printStackTrace();
-            throw e;
+            if (isNull(info)) {
+                continue;
+            }
+            if (isPrivate(info)) {
+                continue;
+            }
+            if (isWho(info)) {
+                continue;
+            }
+            if (isPreSet(info)) {
+                continue;
+            }
+            if (isHistory(info)) {
+                continue;
+            }
+            out.println("你说：" + info);
+            message.add(info);
+            broadcast(name + "说：" + info, "");
+            System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
+                    "','data':'" + info + "'}");
         }
     }
 
@@ -164,7 +151,7 @@ public class ServerThread extends Thread {
     }
 
     private boolean isPrivate(String info) {
-        String infoSpilt[] = info.split("\\s+");
+        String[] infoSpilt = info.split("\\s+");
         if ("/to".equals(infoSpilt[0])) {
             String nameFromInfo = infoSpilt[1];
             if (!clientThread.containsKey(nameFromInfo)) {
@@ -176,9 +163,9 @@ public class ServerThread extends Thread {
                 message.add(info);
                 return true;
             }
-            StringBuffer temp = new StringBuffer();
+            StringBuilder temp = new StringBuilder();
             for (int i = 2; i < infoSpilt.length; i++) {
-                temp.append(" " + infoSpilt[i]);
+                temp.append(" ").append(infoSpilt[i]);
             }
             sendMessage(nameFromInfo, name + " 对你说：" + temp.toString());
             sendMessage(name, "你对 " + nameFromInfo + "说：" + temp.toString());
@@ -190,14 +177,14 @@ public class ServerThread extends Thread {
     }
 
     private boolean isWho(String info) {
-        String infoSpilt[] = info.split("\\s+");
+        String[] infoSpilt = info.split("\\s+");
         if ("/who".equals(infoSpilt[0])) {
-            String usr = "用户名\n";
+            StringBuilder usr = new StringBuilder("用户名\n");
             for (String temp : clientThread.keySet()) {
-                usr += temp + " \n";
+                usr.append(temp).append(" \n");
             }
-            usr += "Total online user: " + clientThread.size();
-            sendMessage(usr);
+            usr.append("Total online user: ").append(clientThread.size());
+            sendMessage(usr.toString());
             message.add(info);
             return true;
         } else {
@@ -206,7 +193,7 @@ public class ServerThread extends Thread {
     }
 
     private boolean isPreSet(String info) {
-        String infoSpilt[] = info.split("\\s+");
+        String[] infoSpilt = info.split("\\s+");
         if (infoSpilt[0].length() >= 2) {
             if ("//".equals(infoSpilt[0].substring(0, 2))) {
                 String infoPreSet = infoSpilt[0];
@@ -270,9 +257,9 @@ public class ServerThread extends Thread {
     }
 
     private boolean isHistory(String info) {
-        String infoSpilt[] = info.split("\\s+");
+        String[] infoSpilt = info.split("\\s+");
         if ("/history".equals(infoSpilt[0])) {
-            String history = "";
+            StringBuilder history = new StringBuilder();
             if (infoSpilt.length >= 2) {
                 int startIndex = Integer.parseInt(infoSpilt[1]);
                 int maxCount = Integer.parseInt(infoSpilt[2]);
@@ -280,15 +267,15 @@ public class ServerThread extends Thread {
                 if (startIndex < message.size()) {
                     if (startIndex + maxCount < message.size()) {
                         for (int i = startIndex - 1; i < startIndex + maxCount; i++) {
-                            history += i + 1 + "\t" + message.get(i) + "\n";
+                            history.append(i + 1).append("\t").append(message.get(i)).append("\n");
                         }
-                        sendMessage(history);
+                        sendMessage(history.toString());
                         return true;
                     } else {
                         for (int i = startIndex - 1; i < message.size(); i++) {
-                            history += i + 1 + "\t" + message.get(i) + "\n";
+                            history.append(i + 1).append("\t").append(message.get(i)).append("\n");
                         }
-                        sendMessage(history);
+                        sendMessage(history.toString());
                         return true;
                     }
 
@@ -300,15 +287,15 @@ public class ServerThread extends Thread {
                 message.add(info);
                 if (message.size() >= 50) {
                     for (int i = 0; i < 50; i++) {
-                        history += i + 1 + "\t" + message.get(i) + "\n";
+                        history.append(i + 1).append("\t").append(message.get(i)).append("\n");
                     }
-                    sendMessage(history);
+                    sendMessage(history.toString());
                     return true;
                 } else {
                     for (int i = 0; i < message.size(); i++) {
-                        history += i + 1 + "\t" + message.get(i) + "\n";
+                        history.append(i + 1).append("\t").append(message.get(i)).append("\n");
                     }
-                    sendMessage(history);
+                    sendMessage(history.toString());
                     return true;
                 }
             }

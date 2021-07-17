@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;11. 解决一部分异常处理">
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +89,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="200" />
+    </hideBySeverity>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-14" />
     <option name="width" value="1528" />
@@ -163,7 +169,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Application.ClientTest 3">
+  <component name="RunManager" selected="Application.ClientTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -264,13 +270,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -311,9 +319,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SocketServer" />
-        <item itemvalue="Application.ClientTest 2" />
         <item itemvalue="Application.ClientTest" />
+        <item itemvalue="Application.ClientTest 2" />
+        <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.AddSubTest" />
         <item itemvalue="Application.Client" />
       </list>
@@ -349,7 +357,8 @@
       <workItem from="1626161294605" duration="19760000" />
       <workItem from="1626220849156" duration="4815000" />
       <workItem from="1626244879207" duration="8811000" />
-      <workItem from="1626482130335" duration="6519000" />
+      <workItem from="1626482130335" duration="6981000" />
+      <workItem from="1626489483422" duration="4537000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -519,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626482389681</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）">
+      <created>1626489264053</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1626489264053</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -620,7 +636,8 @@
     <MESSAGE value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;&#10;TODO：" />
     <MESSAGE value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;TODO：" />
     <MESSAGE value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;11. 解决一部分异常处理" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;11. 解决一部分异常处理" />
+    <MESSAGE value="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

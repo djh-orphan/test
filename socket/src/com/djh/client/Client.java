@@ -14,11 +14,11 @@ import java.util.Scanner;
  */
 public class Client {
     public boolean isLogin = true;
-    private Socket client;
-    private PrintWriter output;
-    private BufferedReader input;
+    private final Socket client;
+    private final PrintWriter output;
+    private final BufferedReader input;
     private final Scanner sc = new Scanner(System.in);
-    private ClientThread clientThread;
+    private final ClientThread clientThread;
     private String name;
 
     public Client(String IP) throws IOException {
@@ -44,11 +44,11 @@ public class Client {
     }
 
 
-    public void login() throws IOException {
+    public void login() {
         try {
             System.out.println("Please login");
             String tips1 = "Name exist, please choose another name.";
-            String in = null;
+            String in;
             while (true) {
                 String commandLine = sc.nextLine();
                 if (!commandLine.contains("/login ")) {
@@ -66,7 +66,8 @@ public class Client {
                 in = input.readLine();
                 if (!tips1.equals(in)) {
                     System.out.println(in);
-                    name = commandLine.substring(7, commandLine.length());
+                    String[] inSpilt = commandLine.split("\\s+");
+                    name = inSpilt[1];
                     break;
                 } else {
                     System.out.println("Name exist, please choose another name.");
@@ -82,7 +83,7 @@ public class Client {
         }
     }
 
-    public void talk() throws IOException {
+    public void talk() {
         try {
             clientThread.start();
             while (clientThread.isRunning) {
@@ -92,7 +93,6 @@ public class Client {
                 }
                 if (commandLine.length() == 0) {
                     output.println("Please input invalid message!");
-                    continue;
                 } else {
                     output.println(commandLine);
                 }
