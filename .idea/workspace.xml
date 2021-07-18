@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="修改一些语法问题">
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/NioServerSocket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module01/Module01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Module01/Module01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/socket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/socket/socket.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/Se.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/sever/SocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +40,28 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="djh/nio" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="duan" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -180,20 +192,6 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="AddSubTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.test.AddSubTest" />
-      <module name="Module01" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.djh.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ClientTest 2" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
       <module name="socket" />
@@ -240,6 +238,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.djh.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NioServerSocket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.djh.sever.NioServerSocket" />
+      <module name="socket" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.sever.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -322,16 +334,16 @@
       <item itemvalue="Application.ClientTest 2" />
       <item itemvalue="Application.SocketServer" />
       <item itemvalue="Application.ClientTest" />
-      <item itemvalue="Application.AddSubTest" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.NioServerSocket" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.NioServerSocket" />
         <item itemvalue="Application.SocketServer" />
         <item itemvalue="Application.ClientTest" />
         <item itemvalue="Application.ClientTest 2" />
-        <item itemvalue="Application.AddSubTest" />
       </list>
     </recent_temporary>
   </component>

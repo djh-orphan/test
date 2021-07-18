@@ -11,7 +11,7 @@ public class Test {
     public static void main(String[] args) throws IOException {
         try {
             InetAddress address = InetAddress.getByName("127.0.0.4");
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 1; i++) {
                 String name = "name" + i;
                 int port = 4450 + i;
                 try {
