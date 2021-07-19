@@ -36,10 +36,10 @@
 
 - SocketServer类
 
-  ​ 该类的唯一成员变量为线程安全的**ConcurrentHashMap<String,ServerThread>**，目的是存储当前所有在线的用户，以name为key，其对应的ServerThread为value。
+       该类的唯一成员变量为线程安全的**ConcurrentHashMap<String,ServerThread>**，目的是存储当前所有在线的用户，以name为key，其对应的ServerThread为value。
 
-  ​ 在该类的main方法中，循环执行serverSocket.accept()，每接收到一个客户端socket的连接请求，就创建一个ServerThread类的对象去处理。
+       在该类的main方法中，循环执行serverSocket.accept()，每接收到一个客户端socket的连接请求，就创建一个ServerThread类的对象去处理。
 
 - ServerThread类
 
-  ​ 真正负责处理响应。分为login和talk过程。login负责与客户端的登录对接，talk负责与客户端的talk对接。
+       真正负责处理响应。分为login和talk过程。login负责与客户端的登录对接，talk负责与客户端的talk对接。
