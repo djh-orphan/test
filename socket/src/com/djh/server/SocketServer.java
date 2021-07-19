@@ -1,4 +1,4 @@
-package com.djh.sever;
+package com.djh.server;
 
 import java.io.IOException;
 import java.net.InetAddress;
