@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * @author duan
@@ -34,7 +35,7 @@ public class ClientThread extends Thread {
                     isRunning = false;
                     break;
                 }
-                if (message.equals("you has quit")) {
+                if (message.equals("you have quit")) {
                     System.out.println(message);
 //                    input.close();
                     client.close();
@@ -43,13 +44,13 @@ public class ClientThread extends Thread {
                 } else {
                     System.out.println(message);
                 }
-            } catch (IOException e) {
-//                e.printStackTrace();
-                if ("Connection reset".equals(e.getMessage())) {
-                    System.out.println("与服务器的连接断开");
-                    isRunning = false;
-                }
+            } catch (SocketException e) {
+                System.out.println("与服务器的连接断开");
+                isRunning = false;
                 return;
+            } catch (IOException e) {
+                e.printStackTrace();
+
             }
 
         }

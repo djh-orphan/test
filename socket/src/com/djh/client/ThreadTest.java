@@ -31,8 +31,7 @@ public class ThreadTest extends Thread {
     public void run() {
         try {
             clientThread.start();
-            output.println("/login " + name);
-            output.println("//hi");
+            output.println("/login duan");
         } catch (Exception e) {
             e.printStackTrace();
         }

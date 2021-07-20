@@ -17,7 +17,7 @@ public class Test {
                 try {
                     ThreadTest threadTest = new ThreadTest(address, port, name);
                     threadTest.start();
-                    System.out.println("thread" + threadTest.getName() + "建立");
+                    System.out.println(threadTest.getName() + "建立");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

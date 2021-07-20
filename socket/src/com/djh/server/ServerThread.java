@@ -30,14 +30,13 @@ public class ServerThread extends Thread {
         try {
             login();
             talk();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
-            if ("Connection reset".equals(e.getMessage())) {
-                if (name != null) {
-                    clientThread.remove(name);
-                }
-                System.out.println(client.getInetAddress().getHostName() + "断开连接");
+            if (name != null) {
+                clientThread.remove(name);
             }
+            System.out.println(client.getInetAddress().getHostName() + "断开连接");
+
         } finally {
             //关闭资源
             try {
@@ -63,25 +62,17 @@ public class ServerThread extends Thread {
             info = in.readLine();
             System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
                     "','data':'" + info + "'}");
-//                if (info.equals("/quit")) {
-//                    out.println("you just quit");
-//                    client.close();
-//                    break;
-//                }
             String[] infoSpilt = info.split("\\s+");
-
-            if (clientThread.containsKey(infoSpilt[1])) {
-                out.println("Name exist, please choose another name.");
-            } else {
-                out.println("You have logined");
-                message.add(info);
+            ServerThread thread = clientThread.putIfAbsent(infoSpilt[1], this);
+            if (thread == null) {
                 name = infoSpilt[1];
-                clientThread.put(name, this);
+                out.println("You have logined");
                 broadcast(name + " has logined", "");
                 break;
+            } else {
+                out.println("Name exist, please choose another name.");
             }
         }
-
     }
 
     public void talk() throws IOException {

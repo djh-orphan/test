@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
+import java.net.*;
 import java.util.Scanner;
 
 /**
@@ -30,14 +29,13 @@ public class Client {
             this.input =
                     new BufferedReader(new InputStreamReader(this.client.getInputStream()));
             this.clientThread = new ClientThread(this.client, this.output, this.input, this.name);
-        } catch (Exception e) {
+        } catch (BindException e) {
             System.out.println(e.getMessage());
-            if ("Connection refused: connect".equals(e.getMessage())) {
-                System.out.println("请检查客户端socket中目的IP地址是否正确");
-            }
-            if (e.getMessage().contains("Address already in use")) {
-                System.out.println("请检查客户端socket使用的源IP地址和本地端口是否已经被其他客户端使用");
-            }
+            System.out.println("请检查客户端socket使用的源IP地址和本地端口是否已经被其他客户端使用");
+            throw e;
+        } catch (ConnectException e) {
+            System.out.println(e.getMessage());
+            System.out.println("请检查客户端socket中目的IP地址是否正确");
             throw e;
         }
 
@@ -73,13 +71,14 @@ public class Client {
                     System.out.println("Name exist, please choose another name.");
                 }
             }
-        } catch (Exception e) {
+        } catch (SocketException e) {
 //            e.printStackTrace();
             System.out.println(e.getMessage());
-            if ("Connection reset".equals(e.getMessage())) {
-                System.out.println("服务器端的连接断开,请重试");
-                isLogin = false;
-            }
+            System.out.println("服务器端的连接断开,请重试");
+            isLogin = false;
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
