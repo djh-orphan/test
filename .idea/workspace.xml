@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Module01/src/com/djh/test/RegexMatches.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/关于Chatroom一些bug的修正与说明.md" afterDir="false" />
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="1.修改了ServerThread的login&#10;2.修改了异常处理&#10;3.测试了正则表达式">
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/nio/client/NioClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/nio/server/NioServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/com/djh/server/ServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +168,6 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -184,13 +177,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/NioSocket/src/com/djh" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit4.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="Application.ClientTest 2">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -212,25 +206,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientTest 2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
-      <module name="socket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.djh.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ClientTest 3" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
       <module name="socket" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="PATTERN" value="com.djh.nio.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -243,7 +224,7 @@
       <module name="socket" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="PATTERN" value="com.djh.nio.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -257,7 +238,21 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="PATTERN" value="com.djh.nio.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NioServerSocket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.djh.sever.NioServerSocket" />
+      <module name="socket" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.sever.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -284,7 +279,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.client.*" />
+          <option name="PATTERN" value="com.djh.nio.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -339,18 +334,19 @@
     <list>
       <item itemvalue="Application.Love" />
       <item itemvalue="Application.ClientTest 3" />
-      <item itemvalue="Application.ClientTest 2" />
       <item itemvalue="Application.ClientTest" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.NioServerSocket" />
       <item itemvalue="Application.AddSubTest" />
       <item itemvalue="Application.RegexMatches" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientTest" />
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.RegexMatches" />
         <item itemvalue="Application.AddSubTest" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.ClientTest" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -659,7 +655,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first test" />
     <MESSAGE value="two" />
     <MESSAGE value="change name" />
