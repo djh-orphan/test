@@ -24,10 +24,10 @@ public class RegexMatches {
 //        } else {
 //            System.out.println("NO MATCH");
 //        }
-        String line1 = "//hi      weu ";
+        String line1 = "//smile wei hi";
 //        String pattern1="(^/to)(\\s+)(\\S+\\b)(\\s+)(.*)";
-//        String pattern1 = "(^/history)(\\s*)(\\d*)(\\s*)(\\d*)";
-        String pattern1 = "(^//\\S+\\b)(\\s*)(\\S*)";
+//        String pattern1 = "(^/history)(\\s*)([0-9]*)(\\s*)([0-9]*)(.*)";
+        String pattern1 = "(^//)(\\S+\\b)(\\s*)(\\S*)";
 
         // 创建 Pattern 对象
         Pattern r1 = Pattern.compile(pattern1);
@@ -38,8 +38,8 @@ public class RegexMatches {
             System.out.println("Found value: " + m1.group(0));
             System.out.println("Found value: " + m1.group(1));
             System.out.println(m1.group(2));
-            System.out.println("Found value: " + m1.group(3));
-            System.out.println(m1.groupCount());
+            System.out.println("Found value: " + m1.group(4).equals(""));
+            System.out.println(m1.group(4));
         } else {
             System.out.println("NO MATCH");
         }

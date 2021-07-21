@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author duan
@@ -19,6 +22,7 @@ public class Client {
     private final Scanner sc = new Scanner(System.in);
     private final ClientThread clientThread;
     private String name;
+    private final ArrayList<String> message;
 
     public Client(String IP) throws IOException {
         try {
@@ -29,6 +33,7 @@ public class Client {
             this.input =
                     new BufferedReader(new InputStreamReader(this.client.getInputStream()));
             this.clientThread = new ClientThread(this.client, this.output, this.input, this.name);
+            this.message = new ArrayList<>(100);
         } catch (BindException e) {
             System.out.println(e.getMessage());
             System.out.println("请检查客户端socket使用的源IP地址和本地端口是否已经被其他客户端使用");
@@ -52,6 +57,7 @@ public class Client {
                 if (!commandLine.contains("/login ")) {
                     if (commandLine.contains("/quit")) {
 //                        output.println("/quit");
+                        message.add(commandLine);
                         System.out.println("you just quit");
                         isLogin = false;
                         client.close();
@@ -61,6 +67,7 @@ public class Client {
                     continue;
                 }
                 output.println(commandLine);
+                message.add(commandLine);
                 in = input.readLine();
                 if (!tips1.equals(in)) {
                     System.out.println(in);
@@ -85,15 +92,72 @@ public class Client {
     public void talk() {
         try {
             clientThread.start();
+            String pattren = "(^/history)(\\s*)([0-9]*)(\\s*)([0-9]*)(.*)";
+            Pattern regex = Pattern.compile(pattren);
+//            Matcher matcher=regex.matcher()
             while (clientThread.isRunning) {
                 String commandLine = sc.nextLine();
+                Matcher matcher = regex.matcher(commandLine);
                 if (!clientThread.isRunning) {
+                    message.clear();
                     break;
                 }
                 if (commandLine.length() == 0) {
                     output.println("Please input invalid message!");
+                    message.add(commandLine);
+                } else if (matcher.find()) {
+                    if (matcher.group(6).equals("")) {
+                        if (matcher.group(5).equals("")) {
+                            if (matcher.group(3).equals("")) {
+                                StringBuilder history = new StringBuilder();
+                                message.add(commandLine);
+                                if (message.size() >= 50) {
+                                    for (int i = 0; i < 50; i++) {
+                                        history.append(i + 1).append("\t").append(message.get(i)).append("\n");
+                                    }
+                                    System.out.println(history.toString());
+                                } else {
+                                    for (int i = 0; i < message.size(); i++) {
+                                        history.append(i + 1).append("\t").append(message.get(i)).append("\n");
+                                    }
+                                    System.out.println(history.toString());
+                                }
+                            } else {
+                                System.out.println("Invalid command");
+                                continue;
+                            }
+                        } else {
+                            try {
+                                int startIndex = Integer.parseInt(matcher.group(3));
+                                int maxCount = Integer.parseInt(matcher.group(5));
+                                message.add(commandLine);
+                                StringBuilder history = new StringBuilder();
+                                if (startIndex < message.size()) {
+                                    if (startIndex + maxCount < message.size()) {
+                                        for (int i = startIndex - 1; i < startIndex + maxCount; i++) {
+                                            history.append(i + 1).append("\t").append(message.get(i)).append("\n");
+                                        }
+                                        System.out.println(history.toString());
+                                    } else {
+                                        for (int i = startIndex - 1; i < message.size(); i++) {
+                                            history.append(i + 1).append("\t").append(message.get(i)).append("\n");
+                                        }
+                                        System.out.println(history.toString());
+                                    }
+                                } else {
+                                    System.out.println("你输入的startIndex超出索引范围，请重新输入");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println("Invalid command");
+                            }
+
+                        }
+                    } else {
+                        System.out.println("Invalid command");
+                    }
                 } else {
                     output.println(commandLine);
+                    message.add(commandLine);
                 }
             }
 
