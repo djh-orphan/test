@@ -128,7 +128,7 @@ public class ServerThread extends Thread {
 //            message.clear();
             System.out.println(name + "quit");
             broadcast(name + " has quit", "");
-            sendMessage("you has quit.");
+            sendMessage("you have quit.");
             return true;
         }
         return false;
