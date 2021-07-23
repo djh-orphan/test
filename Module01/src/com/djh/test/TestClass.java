@@ -1,8 +1,6 @@
 package com.djh.test;
 
 
-import java.util.Scanner;
-
 public class TestClass {
     public static void main(String[] args) {
         //测试一
@@ -18,73 +16,79 @@ public class TestClass {
 
 
         //测试二
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("请输入尺寸大小:\t");
-        int size = sc.nextInt();
-
-        Student stu[] = new Student[size];
-        for (int i = 0; i < size; i++) {
-            stu[i] = new Student();
-            stu[i].ID = i + 1;
-            /**
-             * 生成指定区间整数随机数的办法 [min,max]
-             * 1）不是从0开始
-             * 使用(int)(Math.raandom()*max%(max-min+1)+min)
-             * 2)从0开始
-             * 使用(int) Math.round(Math.random()*max%(max-min+1)+min)
-             */
-            stu[i].score = (int) Math.round(Math.random() * 750 % 751);
-            stu[i].state = (int) (Math.random() * 9 % 9 + 1);
-
-        }
-
-        long sta, end;
-        Student stu1[] = new Student[stu.length];
-        System.arraycopy(stu, 0, stu1, 0, stu.length);
-
-
-//        冒泡排序
-        sta = System.nanoTime();
-        bubbleSort(stu);
-        end = System.nanoTime();
-        System.out.println(end - sta);
-        System.out.println("冒泡排序的时间" + (double) (end - sta) + "ns");
-
-//        快速排序
-
-        sta = System.nanoTime();
-        quickSort(stu1, 0, stu.length - 1);
-        end = System.nanoTime();
-        System.out.println(end - sta);
-        System.out.println("快速排序的时间" + (double) (end - sta) + "ns");
-
-
+//        Scanner sc = new Scanner(System.in);
+        int m = 1111111111;
+        byte n = 11;
+        int i = 2;
+        long a = 12343242322L;
+        char c = '\100';
+        c += 1;
+        System.out.println(c);
+//        System.out.println("请输入尺寸大小:\t");
+//        int size = sc.nextInt();
+//
+//        Student stu[] = new Student[size];
 //        for (int i = 0; i < size; i++) {
-//            System.out.println(i + 1 + ":" + stu1[i].ID + ":" + stu1[i].score);
+//            stu[i] = new Student();
+//            stu[i].ID = i + 1;
+//            /**
+//             * 生成指定区间整数随机数的办法 [min,max]
+//             * 1）不是从0开始
+//             * 使用(int)(Math.raandom()*max%(max-min+1)+min)
+//             * 2)从0开始
+//             * 使用(int) Math.round(Math.random()*max%(max-min+1)+min)
+//             */
+//            stu[i].score = (int) Math.round(Math.random() * 750 % 751);
+//            stu[i].state = (int) (Math.random() * 9 % 9 + 1);
+//
 //        }
-        //参数传递测试
-        Circle c = new Circle();
-        PassObject pass = new PassObject();
-        pass.printAreas(c, 5);
-
-        //阶乘测试
-        int n = jiecheng(3);
-        System.out.println(n);
-
-//        Scanner scs = new Scanner(System.in);
-//        System.out.println(sc.hasNext());
-//        while (!scs.hasNext("exit")){
-////            System.out.println("you");
-//            String word=scs.nextLine();
-//            System.out.println(word);
-////            scs=new Scanner(System.in);
+//
+//        long sta, end;
+//        Student stu1[] = new Student[stu.length];
+//        System.arraycopy(stu, 0, stu1, 0, stu.length);
+//
+//
+////        冒泡排序
+//        sta = System.nanoTime();
+//        bubbleSort(stu);
+//        end = System.nanoTime();
+//        System.out.println(end - sta);
+//        System.out.println("冒泡排序的时间" + (double) (end - sta) + "ns");
+//
+////        快速排序
+//
+//        sta = System.nanoTime();
+//        quickSort(stu1, 0, stu.length - 1);
+//        end = System.nanoTime();
+//        System.out.println(end - sta);
+//        System.out.println("快速排序的时间" + (double) (end - sta) + "ns");
+//
+//
+////        for (int i = 0; i < size; i++) {
+////            System.out.println(i + 1 + ":" + stu1[i].ID + ":" + stu1[i].score);
+////        }
+//        //参数传递测试
+//        Circle c = new Circle();
+//        PassObject pass = new PassObject();
+//        pass.printAreas(c, 5);
+//
+//        //阶乘测试
+//        int n = jiecheng(3);
+//        System.out.println(n);
+//
+////        Scanner scs = new Scanner(System.in);
+////        System.out.println(sc.hasNext());
+////        while (!scs.hasNext("exit")){
+//////            System.out.println("you");
+////            String word=scs.nextLine();
+////            System.out.println(word);
+//////            scs=new Scanner(System.in);
+////        }
+//
+//        int i;
+//        while ((i = sc.nextInt()) != 0) {
+//            System.out.println(i);
 //        }
-
-        int i;
-        while ((i = sc.nextInt()) != 0) {
-            System.out.println(i);
-        }
     }
 
 
