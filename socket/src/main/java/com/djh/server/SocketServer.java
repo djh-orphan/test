@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @create 2021-07-13 14:31
  */
 public class SocketServer {
-    private static final ConcurrentHashMap<String, ServerThread> clientThread = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, com.djh.server.ServerThread> clientThread = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
         try {
@@ -22,7 +22,7 @@ public class SocketServer {
             while (true) {
                 Socket client = serverSocket.accept();
                 System.out.println(client.getInetAddress().getHostName() + "接入");
-                ServerThread serverThread = new ServerThread(client, clientThread);
+                com.djh.server.ServerThread serverThread = new com.djh.server.ServerThread(client, clientThread);
                 serverThread.start();
             }
         } catch (IOException e) {

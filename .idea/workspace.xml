@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="1.修改了ServerThread的login&#10;2.修改了异常处理&#10;3.测试了正则表达式">
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/nio/client/NioClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socket/src/com/djh/nio/server/NioServer.java" afterDir="false" />
+    <list default="true" id="f22c72b6-c5e7-4858-baf6-82e5faf8a2c8" name="Default" comment="创建NIO包">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module01/src/com/djh/test/CircleExtends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module01/src/com/djh/test/InputStreamTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/socket/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module01/src/com/djh/test/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module01/src/com/djh/test/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/socket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/socket/socket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/client/ClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/client/ClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/client/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/client/ThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/client/ThreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/nio/client/NioClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/nio/client/NioClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/nio/client/SelectorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/nio/client/SelectorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/nio/server/NioServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/nio/server/NioServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/server/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/src/com/djh/server/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/socket/src/main/java/com/djh/server/SocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +52,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -179,12 +206,14 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/NioSocket/src/com/djh" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit4.jar" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ServerThreadTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -192,13 +221,12 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="AddSubTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.test.AddSubTest" />
-      <module name="Module01" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="ClientTest 2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
+      <module name="socket" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.test.*" />
+          <option name="PATTERN" value="com.djh.nio.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,7 +247,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.djh.client.ClientTest" />
       <module name="socket" />
       <extension name="coverage">
@@ -246,13 +274,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NioServerSocket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.sever.NioServerSocket" />
+    <configuration name="NioClient 2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.djh.nio.client.NioClient" />
       <module name="socket" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.djh.sever.*" />
+          <option name="PATTERN" value="com.djh.nio.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -260,23 +287,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegexMatches" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.test.RegexMatches" />
-      <module name="Module01" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.djh.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.djh.client.Test" />
+    <configuration name="NioClient 3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.djh.nio.client.NioClient" />
       <module name="socket" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.djh.nio.client.*" />
@@ -302,6 +315,90 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerThreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djh.server" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.server.ServerThreadTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerThreadTest.testBroadcast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djh.server" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.server.ServerThreadTest" />
+      <option name="METHOD_NAME" value="testBroadcast" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerThreadTest.testIsPrivate2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djh.server" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.server.ServerThreadTest" />
+      <option name="METHOD_NAME" value="testIsPrivate2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerThreadTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djh.server" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.server.ServerThreadTest" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerThreadTest.testTalk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="socket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djh.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djh.server" />
+      <option name="MAIN_CLASS_NAME" value="com.djh.server.ServerThreadTest" />
+      <option name="METHOD_NAME" value="testTalk" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -335,18 +432,22 @@
       <item itemvalue="Application.Love" />
       <item itemvalue="Application.ClientTest 3" />
       <item itemvalue="Application.ClientTest" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.NioServerSocket" />
-      <item itemvalue="Application.AddSubTest" />
-      <item itemvalue="Application.RegexMatches" />
+      <item itemvalue="Application.ClientTest 2" />
+      <item itemvalue="Application.NioClient 2" />
+      <item itemvalue="Application.NioClient 3" />
+      <item itemvalue="JUnit.ServerThreadTest.testLogin" />
+      <item itemvalue="JUnit.ServerThreadTest.testBroadcast" />
+      <item itemvalue="JUnit.ServerThreadTest.testIsPrivate2" />
+      <item itemvalue="JUnit.ServerThreadTest.testTalk" />
+      <item itemvalue="JUnit.ServerThreadTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RegexMatches" />
-        <item itemvalue="Application.AddSubTest" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.ClientTest" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.ServerThreadTest" />
+        <item itemvalue="JUnit.ServerThreadTest.testTalk" />
+        <item itemvalue="JUnit.ServerThreadTest.testBroadcast" />
+        <item itemvalue="JUnit.ServerThreadTest.testIsPrivate2" />
+        <item itemvalue="JUnit.ServerThreadTest.testLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -385,6 +486,11 @@
       <workItem from="1626511865115" duration="3781000" />
       <workItem from="1626516438588" duration="8238000" />
       <workItem from="1626524942664" duration="2203000" />
+      <workItem from="1626791738091" duration="428000" />
+      <workItem from="1626832056837" duration="23100000" />
+      <workItem from="1626915903691" duration="11166000" />
+      <workItem from="1626958445824" duration="10698000" />
+      <workItem from="1627185875761" duration="11845000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1625368968007</created>
@@ -568,7 +674,35 @@
       <option name="project" value="LOCAL" />
       <updated>1626510766410</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="创建NIO包">
+      <created>1626791488486</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1626791488486</updated>
+    </task>
+    <task id="LOCAL-00028" summary="1.使用正则表达式完善 私聊、预设功能&#10;2.将history设计在客户端，并使用正则表达式改善history功能">
+      <created>1626850452184</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1626850452184</updated>
+    </task>
+    <task id="LOCAL-00029" summary="NIO&#10;客户端 服务端所有功能全部实现">
+      <created>1626947712949</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1626947712949</updated>
+    </task>
+    <task id="LOCAL-00030" summary="创建NIO包">
+      <created>1627003257255</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1627003257255</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -642,6 +776,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -671,7 +815,10 @@
     <MESSAGE value="2021.7.13&#10;已实现：（全部完成）&#10;1./login 全部完成&#10;2./quit 全部完成&#10;3.xxxxx 广播发送 全部完成&#10;4./to usr xxxxx 全部完成&#10;5.//hi usr_name 完成&#10;6. /who 完成&#10;7. /history 完成&#10;8. 解决不输入直接Enter的bug&#10;9.解决checkonline问题&#10;10.实现/smile&#10;11. 解决一部分异常处理" />
     <MESSAGE value="2021.7.17&#10;已实现：（全部完成）&#10;异常处理的设计：&#10;1.考虑客户端连接断开的情况（Connection reset)&#10;2.考虑服务器端连接突然断开（Connection reset）&#10;3.考虑客户端输入的目的IP地址不正确（Connection refused: connect）&#10;4.考虑客户端使用的源IP和本地端口已被其他线程使用（Address already in use）" />
     <MESSAGE value="修改一些语法问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改一些语法问题" />
+    <MESSAGE value="1.使用正则表达式完善 私聊、预设功能&#10;2.将history设计在客户端，并使用正则表达式改善history功能" />
+    <MESSAGE value="NIO&#10;客户端 服务端所有功能全部实现" />
+    <MESSAGE value="创建NIO包" />
+    <option name="LAST_COMMIT_MESSAGE" value="创建NIO包" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -13,7 +13,7 @@ public class ServerThread extends Thread {
     private final Socket client;
     private final PrintWriter out;
     private final BufferedReader in;
-    private String name;
+    public String name;
     private final ConcurrentHashMap<String, ServerThread> clientThread;
 //    private final ArrayList<String> message;
 
@@ -61,8 +61,8 @@ public class ServerThread extends Thread {
         String info;
         while (true) {
             info = in.readLine();
-            System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
-                    "','data':'" + info + "'}");
+//            System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
+//                    "','data':'" + info + "'}");
             String[] infoSpilt = info.split("\\s+");
             ServerThread thread = clientThread.putIfAbsent(infoSpilt[1], this);
             if (thread == null) {
@@ -103,13 +103,13 @@ public class ServerThread extends Thread {
             out.println("你说：" + info);
 //            message.add(info);
             broadcast(name + "说：" + info, "");
-            System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
-                    "','data':'" + info + "'}");
+//            System.out.println("服务器端接收：" + "{'from_client':'" + client.getInetAddress().getHostName() +
+//                    "','data':'" + info + "'}");
         }
     }
 
 
-    private void broadcast(String message, String names) {
+    public void broadcast(String message, String names) {
         for (ConcurrentHashMap.Entry<String, ServerThread> entry : clientThread.entrySet()) {
             if (!name.equals(entry.getKey())) {
                 if (!names.equals(entry.getKey())) {
@@ -362,7 +362,7 @@ public class ServerThread extends Thread {
 //
 //    }
 
-    private boolean isPrivate2(String info) {
+    public boolean isPrivate2(String info) {
         String pattern = "(^/to)(\\s+)(\\S+\\b)(\\s+)(.*)";
         Pattern regex = Pattern.compile(pattern);
         Matcher matcher = regex.matcher(info);
@@ -385,11 +385,11 @@ public class ServerThread extends Thread {
         }
     }
 
-    private void sendMessage(String message) {
+    public void sendMessage(String message) {
         out.println(message);
     }
 
-    private void sendMessage(String name, String message) {
+    public void sendMessage(String name, String message) {
         clientThread.get(name).out.println(message);
     }
 
